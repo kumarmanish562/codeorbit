@@ -11,6 +11,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import { UserButton, useUser } from "@clerk/nextjs"
 
 const courses = [
   {
@@ -70,6 +71,10 @@ const courses = [
 ]
 
 function Header() {
+
+    const {user} = useUser();
+
+
   return (
     <header className="w-full">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between p-4">
@@ -147,9 +152,19 @@ function Header() {
         </NavigationMenu>
 
         {/* Sign Up */}
-        <Button className="font-game text-2xl" variant="pixel">
+       {!user ?
+       <Link href="/sign-in">
+       <Button className="font-game text-2xl" variant="pixel">
           Sign Up
         </Button>
+        </Link>
+        : <div className="flex items-center gap-4">
+            <Button className="font-game text-2xl" variant="pixel">
+              Dashboard
+            </Button>
+            <UserButton/>
+
+        </div> }
       </div>
     </header>
   )
