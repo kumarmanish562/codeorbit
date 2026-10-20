@@ -5,6 +5,7 @@ import {
   Geist_Mono,
   Pixelify_Sans,
   Inter,
+  Jersey_15,
 } from "next/font/google";
 import "./globals.css";
 import Provider from "./provider";
@@ -19,10 +20,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const gameFont = Pixelify_Sans({
+const gameFont = Jersey_15({
   variable: "--font-game",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ['400'],
 });
 
 const inter = Inter({
