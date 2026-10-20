@@ -2,6 +2,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/dist/client/link";
 import Image from "next/image";
 
 function Hero() {
@@ -40,12 +41,15 @@ function Hero() {
           Beginner-Friendly Coding Courses.
         </p>
 
+
+         <Link href="/sign-in">
         <Button
           variant="pixel"
           className="mt-5 p-6 font-game text-lg sm:text-2xl"
         >
           Get Started
         </Button>
+        </Link>
       </div>
     </section>
   );
