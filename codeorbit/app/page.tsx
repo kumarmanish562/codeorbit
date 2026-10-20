@@ -3,12 +3,20 @@
 // Default page of the apllication
 // @return
 
+
+import Header from "./_components/Header";
+import Hero from "./_components/Hero";
+
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="font-game text-4xl font-bold">
-        Welcome to CodeOrbit
-      </h1>
-    </main>
+      <div className="flex flex-col items-center">
+      {/* Header / Navbar */}
+      <Header />
+
+
+      {/* Hero Section */}
+      <Hero />
+    </div>
   );
 }
