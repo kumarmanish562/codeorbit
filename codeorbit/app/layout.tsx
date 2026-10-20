@@ -7,6 +7,7 @@ import {
   Inter,
 } from "next/font/google";
 import "./globals.css";
+import Provider from "./provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,11 +40,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${gameFont.variable} ${inter.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        {children}
+      lang="en"  suppressHydrationWarning className="dark">
+    
+      <body className={`${geistSans.variable} ${geistMono.variable} ${gameFont.variable} ${inter.variable} h-full antialiased`}>
+       <Provider
+       attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange>
+         {children}
+       </Provider>
       </body>
     </html>
   );
